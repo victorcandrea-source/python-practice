@@ -28,16 +28,23 @@ def create_tables(conn):
 
 
 def get_db_connection():
-    db_exists = os.path.exists("task.db")
+    db_path = os.getenv("TASK_DB_PATH", "task.db")
     try:
-        conn = sqlite3.connect("task.db")
+        conn = sqlite3.connect(db_path)
+        
+        # KEY FOR API: This allows us to access data by name: row['title']
         conn.row_factory = sqlite3.Row
-        if not db_exists:
-            create_tables(conn)
-        else:
-            create_tables(conn)
+        
+        # Always ensuring tables are ready
+        # If your create_tables function uses "CREATE TABLE IF NOT EXISTS", 
+        # you don't even need the 'if not db_exists' check!
+        create_tables(conn)
+        
         return conn
+        
     except sqlite3.Error as e:
+        # Instead of just printing, we raise an exception.
+        # This tells the FastAPI 'try/except' block that the DB is down.
         print(f"Database connection error: {e}")
         return None
 
