@@ -1,0 +1,21 @@
+[
+  "tests/test_api.py::test_change_status_from_canceled_fails",
+  "tests/test_api.py::test_change_status_from_todo_to_done",
+  "tests/test_api.py::test_change_status_not_found",
+  "tests/test_api.py::test_change_status_success",
+  "tests/test_api.py::test_create_task_empty_title",
+  "tests/test_api.py::test_create_task_missing_owner",
+  "tests/test_api.py::test_create_task_missing_title",
+  "tests/test_api.py::test_create_task_success",
+  "tests/test_api.py::test_full_task_lifecycle",
+  "tests/test_api.py::test_get_task_not_found",
+  "tests/test_api.py::test_get_task_success",
+  "tests/test_api.py::test_health_check",
+  "tests/test_api.py::test_list_tasks_empty",
+  "tests/test_api.py::test_list_tasks_filter_by_owner",
+  "tests/test_api.py::test_list_tasks_with_data",
+  "tests/test_api.py::test_patch_task_multiple_fields",
+  "tests/test_api.py::test_patch_task_no_fields",
+  "tests/test_api.py::test_patch_task_not_found",
+  "tests/test_api.py::test_patch_task_success"
+]

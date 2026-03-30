@@ -1,1 +1,3 @@
-.venv/
+*
+!week_04_assigment_02/
+!.gitignore
